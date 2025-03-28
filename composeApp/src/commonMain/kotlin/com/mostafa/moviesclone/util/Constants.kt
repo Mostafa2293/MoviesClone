@@ -8,6 +8,9 @@ object Constants {
         const val REQUEST_TIMEOUT = 15000L
         const val AUTHORIZATION = "Authorization"
         const val POPULAR_MOVIES_URL = "movie/popular"
+        const val TOP_RATED_URL = "movie/top_rated"
+        const val UPCOMING_URL = "movie/upcoming"
+        const val IMAGE_BASE_URL = "https://image.tmdb.org/t/p/original"
     }
 
     object Database {
@@ -16,6 +19,6 @@ object Constants {
     }
 
     object UI {
-        const val DEFAULT_ANIMATION_DURATION = 300L
+        const val DEFAULT_ANIMATION_DURATION = 3000L
     }
 }

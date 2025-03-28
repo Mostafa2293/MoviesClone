@@ -1,0 +1,17 @@
+CREATE TABLE PopularMovies (
+    id INTEGER NOT NULL PRIMARY KEY,
+    posterImage TEXT,
+    releaseDate TEXT,
+    title TEXT,
+    rating REAL
+);
+
+selectAll:
+SELECT * FROM PopularMovies;
+
+insertMovie:
+INSERT INTO PopularMovies(id, posterImage, releaseDate, title, rating)
+VALUES (?, ?, ?, ?, ?);
+
+deleteAll:
+DELETE FROM PopularMovies;

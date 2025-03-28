@@ -43,7 +43,7 @@ import androidx.compose.ui.graphics.Color
     surfaceContainerHighest = surfaceContainerHighestLight,
 )
 
-val darkScheme = darkColorScheme(
+ val darkScheme = darkColorScheme(
     primary = primaryDark,
     onPrimary = onPrimaryDark,
     primaryContainer = primaryContainerDark,

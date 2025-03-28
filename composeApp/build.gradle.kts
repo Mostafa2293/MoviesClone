@@ -9,6 +9,7 @@ plugins {
     alias(libs.plugins.composeCompiler)
     alias(libs.plugins.kotlinxSerialization)
     alias(libs.plugins.realm.plugin)
+    alias(libs.plugins.sqldelight)
 }
 
 kotlin {
@@ -36,6 +37,8 @@ kotlin {
             implementation(compose.preview)
             implementation(libs.androidx.activity.compose)
             implementation(libs.ktor.client.android)
+            implementation(libs.sqldelight.android.driver)
+            implementation(libs.koin.android)
         }
         commonMain.dependencies {
             implementation(compose.runtime)
@@ -57,6 +60,7 @@ kotlin {
             implementation(libs.ktor.client.content.negotiation)
             implementation(libs.ktor.serialization.kotlinx.json)
             implementation(libs.ktor.client.logging)
+            implementation(libs.ktor.client.cio)
 
             implementation(libs.kotlinx.datetime)
 
@@ -66,13 +70,15 @@ kotlin {
             implementation(libs.mongodb.realm)
             implementation(libs.kotlinx.coroutines.core)
             implementation(libs.stately.common)
+            implementation(libs.kamel.image)
         }
         iosMain.dependencies {
             implementation(libs.ktor.client.darwin)
+            implementation(libs.sqldelight.native.driver)
+            implementation(libs.kamel.image)
         }
     }
 }
-
 android {
     namespace = "com.mostafa.moviesclone"
     compileSdk = libs.versions.android.compileSdk.get().toInt()
@@ -101,6 +107,15 @@ android {
 }
 
 dependencies {
+    implementation(libs.androidx.foundation.android)
     debugImplementation(compose.uiTooling)
+}
+
+sqldelight {
+    databases {
+        create("MoviezDatabase"){
+            packageName.set("com.mostafa.moviesclone")
+        }
+    }
 }
 

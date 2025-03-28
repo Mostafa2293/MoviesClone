@@ -6,7 +6,7 @@ import androidx.compose.runtime.Composable
 import cafe.adriel.voyager.navigator.Navigator
 import com.example.compose.darkScheme
 import com.example.compose.lightScheme
-import com.mostafa.moviesclone.presentation.Screens.HomeScreen
+import com.mostafa.moviesclone.presentation.Home.HomeScreen
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
 @Composable

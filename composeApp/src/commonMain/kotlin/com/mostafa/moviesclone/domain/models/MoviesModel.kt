@@ -1,7 +1,9 @@
 package com.mostafa.moviesclone.domain.models
 
-data class PopularMoviesModel(
+data class MoviesModel(
+    val id: Int,
     val title: String,
-    val posterPath: String,
+    val posterImage: String,
     val releaseDate: String,
+    val rating: Double
 )
