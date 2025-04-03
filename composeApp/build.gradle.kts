@@ -70,12 +70,12 @@ kotlin {
             implementation(libs.mongodb.realm)
             implementation(libs.kotlinx.coroutines.core)
             implementation(libs.stately.common)
-            implementation(libs.kamel.image)
+            implementation(libs.coil.compose)
+            implementation(libs.coil.network.ktor)
         }
         iosMain.dependencies {
             implementation(libs.ktor.client.darwin)
             implementation(libs.sqldelight.native.driver)
-            implementation(libs.kamel.image)
         }
     }
 }

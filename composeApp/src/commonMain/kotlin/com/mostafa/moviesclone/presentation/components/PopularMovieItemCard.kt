@@ -17,11 +17,10 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
+import coil3.compose.AsyncImage
 import com.example.compose.onSecondaryContainerLight
 import com.example.compose.surfaceContainerLight
 import com.mostafa.moviesclone.domain.models.MoviesModel
-import io.kamel.image.KamelImage
-import io.kamel.image.asyncPainterResource
 
 @Composable
 fun PopularMovieItemCard(
@@ -48,12 +47,10 @@ fun PopularMovieItemCard(
                     .weight(1f),
                 contentAlignment = Alignment.TopCenter
             ) {
-                KamelImage(
-                    resource = { asyncPainterResource(movie.posterImage) },
-                    contentDescription = "${movie.title} Poster",
-                    onFailure = { println("Failed to load image: ${it.message}") },
+                AsyncImage(
+                    model = movie.posterImage,
+                    contentDescription = "movie poster",
                 )
-
                 TicketStyleRatingBadge(
                     rating = movie.rating.toFloat(),
                     modifier = Modifier.align(Alignment.TopStart)

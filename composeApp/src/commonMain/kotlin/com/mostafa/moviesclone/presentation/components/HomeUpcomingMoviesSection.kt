@@ -19,11 +19,10 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
+import coil3.compose.AsyncImage
 import com.example.compose.primaryLight
 import com.mostafa.moviesclone.domain.models.MoviesModel
 import com.mostafa.moviesclone.util.Constants.UI.DEFAULT_ANIMATION_DURATION
-import io.kamel.image.KamelImage
-import io.kamel.image.asyncPainterResource
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
@@ -79,12 +78,10 @@ fun HomeUpcomingMoviesSection(
             state = pagerState,
             modifier = Modifier.fillMaxWidth()
         ) { page ->
-            KamelImage(
-                { asyncPainterResource(moviesList[page].posterImage) },
-                contentDescription = moviesList[page].title,
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .height(300.dp)
+            AsyncImage(
+                modifier = Modifier.fillMaxWidth().height(300.dp),
+                model = moviesList[page].posterImage,
+                contentDescription = "movie poster",
             )
         }
 
