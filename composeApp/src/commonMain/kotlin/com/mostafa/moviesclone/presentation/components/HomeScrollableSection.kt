@@ -13,15 +13,20 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import cafe.adriel.voyager.navigator.LocalNavigator
 import com.example.compose.primaryLight
 import com.mostafa.moviesclone.domain.models.MoviesModel
+import com.mostafa.moviesclone.presentation.MoviesList.MoviesListScreen
+import com.mostafa.moviesclone.util.noRippleClickable
 
 @Composable
-fun HomeMoviesSection(
+fun HomeScrollableSection(
     moviesList: List<MoviesModel>,
     sectionTitle: String,
     sectionSubTitle: String
 ) {
+    val navigator = LocalNavigator.current
+
     Column(
         modifier = Modifier
             .fillMaxWidth(),
@@ -41,7 +46,9 @@ fun HomeMoviesSection(
 
             Text(
                 text = "View All",
-                modifier = Modifier.align(Alignment.CenterVertically),
+                modifier = Modifier.align(Alignment.CenterVertically).noRippleClickable {
+                    navigator?.push(MoviesListScreen())
+                },
                 style = MaterialTheme.typography.bodyMedium,
                 color = primaryLight
             )

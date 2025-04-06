@@ -8,4 +8,7 @@ interface HomeRepo {
     suspend fun getPopularMovies(): Flow<RequestState<List<MoviesModel>>>
     suspend fun getTopRatedMovies(): Flow<RequestState<List<MoviesModel>>>
     suspend fun getUpcomingMovies(): Flow<RequestState<List<MoviesModel>>>
+    suspend fun getOnTheAirTvs(): Flow<RequestState<List<MoviesModel>>>
+    suspend fun getPopularTvs(): Flow<RequestState<List<MoviesModel>>>
+    suspend fun getTopRatedTvs(): Flow<RequestState<List<MoviesModel>>>
 }

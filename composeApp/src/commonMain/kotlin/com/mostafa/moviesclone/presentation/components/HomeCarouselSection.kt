@@ -27,7 +27,7 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
 @Composable
-fun HomeUpcomingMoviesSection(
+fun HomeCarouselSection(
     moviesList: List<MoviesModel>,
     sectionTitle: String,
 ) {
